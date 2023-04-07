@@ -15,7 +15,7 @@ Input projection|.|.
 
 ##### Details
 
-Calls PLS-DA, developed by R. de Wijn and implemented in Matlab.
+Calls PLS-DA, Partial Least Squared Discriminant Analysis, developed by R. de Wijn and implemented in Matlab.
 
 Can only work with 1 data point per cell (row x col combo).
 
