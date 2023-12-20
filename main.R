@@ -113,7 +113,7 @@ classify <- function(df, props, arrayColumns, rowColumns, colorColumns){
     "QuantitationType"=props$QuantitationType,
     "DiagnosticPlot"=props$DiagnosticPlot,
     "DiagnosticPlotPath"=outfileImg,
-    "RowFactor"=rowColumns[[  length(rowColumns)  ]],
+    "RowFactor"="ID",
     "ColFactor"=arrayColumns[[ length(arrayColumns) ]],
     "OutputFileMat"=outfileMat, 
     "OutputFileTxt"=outfileTxt )
@@ -130,13 +130,14 @@ classify <- function(df, props, arrayColumns, rowColumns, colorColumns){
     )
   }
   for( rowCol in rowColumns ){
-    dfJson <- append( dfJson,
-                      list(list(
-                        "name"=rowCol,
-                        "type"="Spot",
-                        "data"=pull(df, rowCol)
-                      ))
-    )
+    dfJson <- append( dfJson,                      
+                  list(list(
+                       "name"="ID",                         
+                       "type"="Spot",                         
+                       "data"=pull(df, rowCol)
+                  ))
+                 )
+
   }
   
   for( colorCol in colorColumns ){
